@@ -1,9 +1,9 @@
 searchBtn.onclick = async () => {
     let bookName = search.value;
-    let url = 'https://www.googleapis.com/books/v1/volumes?q='+bookName+'&callback=handleResponse';
+    let url = 'https://www.googleapis.com/books/v1/volumes?q='+bookName;
     let response = await fetch(url);
     let commits = await response.json();
-    console.log(response);
+    console.log(commits);
     for (let book of commits.items){
         let avatar = book.volumeInfo.imageLinks.thumbnail;
         let page = book.volumeInfo.previewLink;
